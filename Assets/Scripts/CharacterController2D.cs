@@ -22,6 +22,8 @@ namespace Titan
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
         private Vector3 m_Velocity = Vector3.zero;
 
+        private Vector2 m_JumpVector;
+
         [Header("Events")]
         [Space]
 
@@ -35,6 +37,7 @@ namespace Titan
 
         private void Awake()
         {
+            m_JumpVector = new Vector2(0, m_JumpForce);
             m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
             if (OnLandEvent == null)
@@ -132,7 +135,7 @@ namespace Titan
             {
                 // Add a vertical force to the player.
                 m_Grounded = false;
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+                m_Rigidbody2D.AddForce(m_JumpVector);
             }
         }
 
