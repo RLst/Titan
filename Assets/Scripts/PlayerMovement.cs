@@ -19,12 +19,13 @@ namespace Titan.Test
         {
             horizontalInput = Input.GetAxis("Horizontal") * runSpeed;
 
-            if (Input.GetButtonDown("Jump"))
+            // if (Input.GetButtonDown("Jump"))
+			if (Input.GetKeyDown(KeyCode.Space))
                 onJump = true;
 
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.DownArrow))
                 onCrouch = true;
-            else if (Input.GetKeyUp(KeyCode.LeftControl))
+            else if (Input.GetKeyUp(KeyCode.DownArrow))
                 onCrouch = false;
 
         }

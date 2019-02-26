@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - Level
-  - 
+  - Walkable
+  - Ladder
   - 
   - 
   - 
@@ -41,7 +41,7 @@ TagManager:
   - name: Background
     uniqueID: 3559397397
     locked: 0
-  - name: Level
+  - name: Middle
     uniqueID: 3056087305
     locked: 0
   - name: Default
