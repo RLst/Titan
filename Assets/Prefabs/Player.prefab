@@ -210,6 +210,9 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  whatIsLadder:
+    serializedVersion: 2
+    m_Bits: 0
   m_GroundCheck: {fileID: 4357865336437356}
   m_CeilingCheck: {fileID: 4956730590311634}
   m_CrouchDisableCollider: {fileID: 61707010791615594}
@@ -231,10 +234,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557453184141494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4feb037931fcad478c9091778d097f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6eb603c65a8ecd04fa578ab636bc9217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 18
+  hSpeedMultiplier: 20
+  vSpeedMultiplier: 17.5
+  actionKey: 106
+  jumpKey: 107
+  whatIsTerminal:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &212584929485757672
 SpriteRenderer:
   m_ObjectHideFlags: 1
