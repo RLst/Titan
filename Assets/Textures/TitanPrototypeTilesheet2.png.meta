@@ -1,35 +1,36 @@
 fileFormatVersion: 2
-guid: cac071a9253755849970443e2e387938
+guid: 9bfd0736b68517e49be271c2c0e3787e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: prototype_room_bunker
-    21300002: prototype_turret_minigun
-    21300004: prototype_proj_bullet
-    21300006: prototype_platform_ladder
-    21300008: prototype_player
-    21300010: TitanPrototypeSprites1_5
-    21300012: prototype_room_station
-    21300014: prototype_turret_rocketlauncher
-    21300016: prototype_proj_rocket
-    21300018: prototype_enemy_sm
-    21300020: prototype_prop_crate
-    21300022: prototype_room_engine
-    21300024: prototype_turret_sniper
-    21300026: prototype_enemy_md
-    21300028: prototype_room_cockpit
-    21300030: prototype_turret_beam
-    21300032: prototype_proj_beam
-    21300034: prototype_enemy_lg
-    21300036: prototype_room_supply
-    21300038: prototype_turret_mg
-    21300040: prototype_room_empty
-    21300042: prototype_turret_grenade
-    21300044: prototype_proj_grenade
-    21300046: prototype_turret_crossbow
-    21300048: prototype_proj_arrow
-    21300050: prototype_turret_snake
-    21300052: prototype_tracks_sm
-    21300054: prototype_tracks_lg
+    21300000: module_bunker
+    21300002: fixture_ladder
+    21300004: turrent_base_manned
+    21300006: proj_bullet
+    21300008: char_player
+    21300010: module_station
+    21300012: turret_minigun
+    21300014: proj_shell
+    21300016: char_enemy_sml
+    21300018: equip_crate
+    21300020: module_engine
+    21300022: turret_rocket
+    21300024: char_enemy_med
+    21300026: module_cockpit
+    21300028: turret_sniper
+    21300030: proj_beam
+    21300032: char_enemy_lge
+    21300034: TitanPrototypeTilesheet2_24
+    21300036: module_supply
+    21300038: turret_beam
+    21300040: module_empty
+    21300042: turret_hmg
+    21300044: proj_grenade
+    21300046: turret_grenade
+    21300048: proj_bolt
+    21300050: turret_crossbow
+    21300052: turret_snake
+    21300054: tracks_sml
+    21300056: tracks_lge
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -123,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prototype_room_bunker
+      name: module_bunker
       rect:
         serializedVersion: 2
         x: 73
-        y: 1871
+        y: 1872
         width: 153
-        height: 105
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 821f62bb54e78bd4abdae08da89f93a9
+      spriteID: c57b9fcb25eb5bf44a6bf69c35f85a50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_turret_minigun
+      name: fixture_ladder
       rect:
         serializedVersion: 2
-        x: 344
-        y: 1874
-        width: 112
-        height: 51
+        x: 883
+        y: 1871
+        width: 29
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,13 +158,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd5ae9aaf3bd7654c910d6cc8260d5a8
+      spriteID: ad86fc2a3b1a5b64485a75d3e9fe5358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_proj_bullet
+      name: turrent_base_manned
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 1874
+        width: 56
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7b47c61b1acf7949ba50b637d3eaf7e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proj_bullet
       rect:
         serializedVersion: 2
         x: 602
@@ -177,19 +198,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28f13940d702dd44983fda50aee677c1
+      spriteID: d9441baf97ec911449c0f773fc70bb8a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_platform_ladder
+      name: char_player
       rect:
         serializedVersion: 2
-        x: 883
-        y: 1872
-        width: 29
-        height: 100
+        x: 1885
+        y: 1871
+        width: 31
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,39 +218,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5335d5056ed6ba54e93ea99b0c0c6dc2
+      spriteID: fd3b17c0145ee3448a4f9a8331437c16
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_player
+      name: module_station
       rect:
         serializedVersion: 2
-        x: 1133
-        y: 1873
-        width: 30
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 444001820ef64e640a942595bdfb59f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_room_station
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 1721
+        x: 74
+        y: 1722
         width: 153
-        height: 105
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,19 +238,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f1e8ab22b338ce4b851798c45fe45bb
+      spriteID: c77b6cc55a42a2646a2676da51859606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_turret_rocketlauncher
+      name: turret_minigun
       rect:
         serializedVersion: 2
-        x: 346
-        y: 1724
-        width: 124
-        height: 51
+        x: 372
+        y: 1737
+        width: 85
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,13 +258,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1655f543955e58340ac3fec2bccd1e22
+      spriteID: f82036035a0230544acb1e48a22b9541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_proj_rocket
+      name: proj_shell
       rect:
         serializedVersion: 2
         x: 587
@@ -277,218 +278,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 870333b8d81532041bfc07cfb505411a
+      spriteID: 5303968f29a3c9d4faa5a8dd85cb4bd1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_enemy_sm
+      name: char_enemy_sml
       rect:
         serializedVersion: 2
-        x: 1133
-        y: 1725
-        width: 33
-        height: 49
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0347252e882bad64aabaca8a35b27c25
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_prop_crate
-      rect:
-        serializedVersion: 2
-        x: 883
+        x: 1884
         y: 1723
-        width: 28
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 166cecbbed9281e4288fec8112aa8bfb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_room_engine
-      rect:
-        serializedVersion: 2
-        x: 75
-        y: 1572
-        width: 153
-        height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0b5a7d76306a7c4aaa8889554dba1af
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_turret_sniper
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 1573
-        width: 133
-        height: 57
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07b1412f98589004ca00cc56cfecd261
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_enemy_md
-      rect:
-        serializedVersion: 2
-        x: 1129
-        y: 1574
-        width: 40
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 97bbb5dd916b94c46802bbfa8900d947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_room_cockpit
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 1421
-        width: 153
-        height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e5efb3c77f973b4d892b47285047a09
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_turret_beam
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 1424
-        width: 91
-        height: 52
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f4a31fe0d644df4f831e26c3a791097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_proj_beam
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 1459
-        width: 50
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30240f28a54dd5f41ab8d46e7eae3dc8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_enemy_lg
-      rect:
-        serializedVersion: 2
-        x: 1126
-        y: 1423
-        width: 52
-        height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e1358e055761024585b719a616dab7f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_room_supply
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 1270
-        width: 153
-        height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 271a170f9dd8c8244a069c93124fbe80
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prototype_turret_mg
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 1273
-        width: 112
+        width: 36
         height: 53
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -497,19 +298,219 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec5ffc4bec50da043a17eb215a9d12e4
+      spriteID: fdf0dedf0630be94d8ba0c595905688e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_room_empty
+      name: equip_crate
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 1720
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271b9f556223ede4ca5b1600e9c05c77
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: module_engine
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1573
+        width: 153
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24552e5f5eb8ddf40a121a46c86d77c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turret_rocket
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1587
+        width: 98
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48e9541a125b2b41a9cedf01d92a132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_enemy_med
+      rect:
+        serializedVersion: 2
+        x: 1880
+        y: 1572
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa5465c011966448b05f1e151c97938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: module_cockpit
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 1423
+        width: 153
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dec1ce4015fc9c4a8e58d189a6d6da3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turret_sniper
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1438
+        width: 106
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08ea07bdcced9e54a8c7f90c20404306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: proj_beam
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1459
+        width: 51
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1fdef3673967d41b34e77d8ced3ad6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char_enemy_lge
+      rect:
+        serializedVersion: 2
+        x: 1876
+        y: 1420
+        width: 54
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e18b96e00d0b474fa069821ea5f5363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: module_supply
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1271
+        width: 153
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d799dbab94f3a046b40f126b249509d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turret_beam
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1288
+        width: 60
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42945ef1c6631094d98d9de64cf1bf0d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: module_empty
       rect:
         serializedVersion: 2
         x: 73
         y: 1121
         width: 153
-        height: 105
+        height: 103
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,19 +518,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab3be55fc9e80e74faafc6dc9a353e0c
+      spriteID: 84fc2ec5ad846224c8e7941268ded708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_turret_grenade
+      name: turret_hmg
       rect:
         serializedVersion: 2
-        x: 344
-        y: 1124
-        width: 97
-        height: 53
+        x: 374
+        y: 1125
+        width: 81
+        height: 50
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -537,19 +538,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8566580772cbd244be833dd2421ba14
+      spriteID: da46cdf2ea143c345a29160ce12ceacb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_proj_grenade
+      name: proj_grenade
       rect:
         serializedVersion: 2
-        x: 656
+        x: 655
         y: 1167
-        width: 18
-        height: 14
+        width: 19
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,19 +558,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb969225706fc30438ece9e7fcae1098
+      spriteID: 216a32c6f47b86c4e837e2256392a12c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_turret_crossbow
+      name: turret_grenade
       rect:
         serializedVersion: 2
-        x: 343
-        y: 974
-        width: 106
-        height: 53
+        x: 374
+        y: 987
+        width: 68
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -577,19 +578,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4188937c8eaa0b146a86a7983e8af62a
+      spriteID: b22e344f93f7533479d591d5afaf7131
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_proj_arrow
+      name: proj_bolt
       rect:
         serializedVersion: 2
         x: 576
-        y: 1018
+        y: 1017
         width: 99
-        height: 12
+        height: 15
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -597,19 +598,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 598f7ab69825ef6409863338bf2af263
+      spriteID: e57613a7ed9efe541b11915b325fc4a8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_turret_snake
+      name: turret_crossbow
       rect:
         serializedVersion: 2
-        x: 343
-        y: 823
-        width: 89
-        height: 54
+        x: 374
+        y: 837
+        width: 78
+        height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -617,19 +618,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 795c3ff104e0f2143a7643975657c93d
+      spriteID: 599feaf93db231d4f9a3da49f1c511cb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_tracks_sm
+      name: turret_snake
       rect:
         serializedVersion: 2
-        x: 74
+        x: 374
+        y: 688
+        width: 58
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5a0bcc639a831449f3e66c7c35dedc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tracks_sml
+      rect:
+        serializedVersion: 2
+        x: 72
         y: 222
-        width: 157
-        height: 65
+        width: 161
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -637,19 +658,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48b315d7a7eccb546a1d8f50d48a2f91
+      spriteID: fadf0e3ee08456144bffd02b1e040a61
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prototype_tracks_lg
+      name: tracks_lge
       rect:
         serializedVersion: 2
-        x: 73
-        y: 73
-        width: 306
-        height: 61
+        x: 71
+        y: 72
+        width: 309
+        height: 63
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -657,7 +678,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 798786797876ba7459609dd655a2e0ac
+      spriteID: 3effa035c3b83604c929337f8e5a3059
       vertices: []
       indices: 
       edges: []
@@ -665,7 +686,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3860cdf49d8ee2f4cb8b9ba5d0e69605
+    spriteID: 4e9fed2f5d341b54190f3f5fd7a8c3e8
     vertices: []
     indices: 
     edges: []

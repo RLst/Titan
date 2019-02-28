@@ -18,8 +18,8 @@ TagManager:
   - Walkable
   - Ladder
   - Mountables
-  - 
-  - 
+  - Middleground
+  - Background
   - 
   - 
   - 
@@ -40,9 +40,6 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3559397397
-    locked: 0
-  - name: Middle
-    uniqueID: 3056087305
     locked: 0
   - name: Default
     uniqueID: 0
