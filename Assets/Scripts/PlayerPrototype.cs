@@ -23,13 +23,6 @@ namespace Titan.Test
 		public KeyCode specialKey = KeyCode.I;
 		public KeyCode cancelKey = KeyCode.L;
         
-        // //PROTOTYPE
-        // bool onLadder = false;
-        // bool manningTerminal = false;
-        // bool atTerminal = false;
-        // Collider2D[] playerColliders;
-
-
 
         void Awake()
         {

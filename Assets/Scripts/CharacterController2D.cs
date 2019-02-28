@@ -7,32 +7,33 @@ namespace Titan
 	public class CharacterController2D : MonoBehaviour
 	{
 		//Core properties
-		[SerializeField] private bool m_AirControl = true;                          // Whether or not a player can steer while jumping;
-		[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
+		[SerializeField] bool hasAirControl = true;                          // Whether or not a player can steer while jumping;
+		[Range(0, .3f)] [SerializeField] float movementSmoothing = .05f;  // How much to smooth out the movement
 
 
 		[Header("Physics")]
 		[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 		[Tooltip("Used to automatically set rb gravity scale during ladder climb etc")]
 		[SerializeField] float gravityScale = 2f;
-		private Rigidbody2D rb;
+		Rigidbody2D rb;
 		Collider2D[] cols;
-		private Vector2 m_JumpVector;
-		private bool m_FacingRight = true;                                          // For determining which way the player is currently facing.
+		Vector2 jumpVector;
+		bool isFacingRight = true;                                          // For determining which way the player is currently facing.
 		private Vector3 m_Velocity = Vector3.zero;
 
 
 		[Header("Ground & Ceiling")]
 		[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
 		[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-		const float k_GroundedRadius = 0.2f;                                        //[needs to be pretty small]. Radius of the overlap circle to determine if grounded
-		private bool m_Grounded;                                                    // Whether or not the player is grounded.
+		const float k_groundCheckRadius = 0.2f;                                        //[needs to be pretty small]. Radius of the overlap circle to determine if grounded
+		bool isGrounded;                                                    // Whether or not the player is grounded.
 
 
 		[Header("Ladder")]
-		[SerializeField] float ladderDetectDist = 5f;
+		[SerializeField] Vector2 ladderBoxCastExtents = new Vector2(0.25f, 0.5f);
 		[SerializeField] LayerMask whatIsLadder;
 		bool isClimbing = false;
+		Transform currentLadder;		//The ladder the player is currently climbing on
 
 
 		[Header("Mountables")]
@@ -43,6 +44,7 @@ namespace Titan
 		[Header("Events")]
 		[Space]
 		public UnityEvent OnLandEvent;
+
 		// [System.Serializable]
 		// public class BoolEvent : UnityEvent<bool> { }
 		// public BoolEvent OnCrouchEvent;
@@ -64,7 +66,7 @@ namespace Titan
 
 		private void Awake()
 		{
-			m_JumpVector = new Vector2(0, m_JumpForce);
+			jumpVector = new Vector2(0, m_JumpForce);
 			rb = GetComponent<Rigidbody2D>();
 			cols = GetComponents<Collider2D>();
 
@@ -77,17 +79,17 @@ namespace Titan
 
 		private void FixedUpdate()
 		{
-			bool wasGrounded = m_Grounded;
-			m_Grounded = false;
+			bool wasGrounded = isGrounded;
+			isGrounded = false;
 
 			// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 			// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+			Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_groundCheckRadius, m_WhatIsGround);
 			for (int i = 0; i < colliders.Length; i++)
 			{
 				if (colliders[i].gameObject != gameObject)
 				{
-					m_Grounded = true;
+					isGrounded = true;
 					if (!wasGrounded)
 						OnLandEvent.Invoke();
 				}
@@ -98,7 +100,7 @@ namespace Titan
 
 		public void Debugs()
 		{
-			Debug.Log("Grounded: " + m_Grounded);
+			Debug.Log("Grounded: " + isGrounded);
 		}
 
 		public void Action(Vector2 direction)
@@ -139,38 +141,37 @@ namespace Titan
 			//> Climbing ladders
 
 			//MOVE character only if grounded OR is air controllable
-			if (m_Grounded || m_AirControl)
+			if (isGrounded || hasAirControl)
 			{
-				if (!isClimbing) {
+				Vector3 targetVelocity = new Vector2(direction.x * 10f, rb.velocity.y);
+				rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, movementSmoothing);
 
-					Vector3 targetVelocity = new Vector2(direction.x * 10f, rb.velocity.y);
-					rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
-
-					//FACING
-					if (direction.x > 0 && !m_FacingRight)
-					{
-						Flip();
-					}
-					else if (direction.x < 0 && m_FacingRight)
-					{
-						Flip();
-					}
+				//FACING
+				if (direction.x > 0 && !isFacingRight)
+				{
+					Flip();
+				}
+				else if (direction.x < 0 && isFacingRight)
+				{
+					Flip();
 				}
 			}
 
 			//JUMPING
-			if (m_Grounded && onJump)
+			if (isGrounded && onJump)
 			{
 				// Add a vertical force to the player.
-				m_Grounded = false;
-				rb.AddForce(m_JumpVector);
+				isGrounded = false;
+				rb.AddForce(jumpVector);
 			}
 
 			//LADDER
-			var castHitInfo = Physics2D.BoxCast(transform.position, new Vector2(0.25f, 0.50f), 0, Vector2.zero, 0, whatIsLadder);
+			var castHitInfo = Physics2D.BoxCast(transform.position, ladderBoxCastExtents, 0, Vector2.zero, 0, whatIsLadder);
 			// RaycastHit2D rayHitInfo = Physics2D.Raycast(transform.position, Vector2.up, ladderDetectDist, whatIsLadder);
 			if (castHitInfo.collider != null)    //If the ray has hit a ladder
 			{
+				//Save the current ladder
+				currentLadder = castHitInfo.collider.transform;
 				//If player is pressing up
 				if (direction.y > 0)
 				{
@@ -184,10 +185,13 @@ namespace Titan
 
 			if (isClimbing == true)
 			{
-				//Move the character
-				// m_Rigidbody2D.velocity = (new Vector2(0, ))
-				rb.velocity = new Vector2(rb.velocity.x, direction.y);
+				//Character climbs or decends based on vertical input
+				//Smoothly snap character to ladder ie. lerp character towards x position of ladder
+				// rb.velocity = Vector3.SmoothDamp(transform.position, currentLadder.position, ref m_Velocity, movementSmoothing);
+				// Vector3 snapToLadder = new Vector2(Vector2.MoveTowards())
+				// rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, movementSmoothing);
 
+				rb.velocity = new Vector2(rb.velocity.x, direction.y);
 			}
 		}
 
@@ -221,7 +225,7 @@ namespace Titan
 		private void Flip()
 		{
 			// Switch the way the player is labelled as facing.
-			m_FacingRight = !m_FacingRight;
+			isFacingRight = !isFacingRight;
 
 			// Multiply the player's x local scale by -1.
 			Vector3 theScale = transform.localScale;
