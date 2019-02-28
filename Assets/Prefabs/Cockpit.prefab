@@ -37,7 +37,8 @@ GameObject:
   - component: {fileID: 4914946876031898}
   - component: {fileID: 61761116818794310}
   - component: {fileID: 61290037361786272}
-  m_Layer: 0
+  - component: {fileID: 61623095731733232}
+  m_Layer: 10
   m_Name: Cockpit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,8 +64,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1538268308036320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.442999, y: 2.907, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4252279961248620}
@@ -96,6 +97,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.527111, y: 0.07351971}
   m_EdgeRadius: 0
+--- !u!61 &61623095731733232
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1538268308036320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.56504345, y: 0.0023691654}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3958645, y: 1.0047383}
+  m_EdgeRadius: 0
 --- !u!61 &61761116818794310
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -108,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0007343292, y: 0.48673224}
+  m_Offset: {x: -0.12037659, y: 0.48673224}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -119,7 +145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.527111, y: 0.07351971}
+  m_Size: {x: 1.2878265, y: 0.07351971}
   m_EdgeRadius: 0
 --- !u!212 &212720136805086054
 SpriteRenderer:

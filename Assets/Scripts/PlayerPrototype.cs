@@ -8,33 +8,34 @@ namespace Titan.Test
         CharacterController2D controller;
 
         [SerializeField] float hSpeedMultiplier = 20f;
-        public float vSpeedMultiplier = 17.5f;
+        [SerializeField] float vSpeedMultiplier = 17.5f;
 
-        float hInput = 0f;
-        float vInput = 0f;
+        float hInput, vInput;
 
-        bool onCrouch = false;
+		bool onAction = false;
         bool onJump = false;
-        
-        //PROTOTYPE
-        bool onLadder = false;
-        bool manningTerminal = false;
-        bool atTerminal = false;
-        Collider2D[] playerColliders;
+		bool onSpecial = false;
+		bool onCancel = false;
 
-        public KeyCode actionKey = KeyCode.J;
+		//TODO separate these out into its own input class later
+		public KeyCode actionKey = KeyCode.J;
         public KeyCode jumpKey = KeyCode.K;
+		public KeyCode specialKey = KeyCode.I;
+		public KeyCode cancelKey = KeyCode.L;
+        
+        // //PROTOTYPE
+        // bool onLadder = false;
+        // bool manningTerminal = false;
+        // bool atTerminal = false;
+        // Collider2D[] playerColliders;
 
-
-        [Tooltip("Temp")]
-        public LayerMask whatIsTerminal;
 
 
         void Awake()
         {
             controller = GetComponent<CharacterController2D>();
 
-            playerColliders = GetComponents<Collider2D>();      //Get all colliders for use with finding terminals and ladders etc
+            // playerColliders = GetComponents<Collider2D>();      //Get all colliders for use with finding terminals and ladders etc
         }
 
         void Update()
@@ -43,34 +44,48 @@ namespace Titan.Test
             vInput = Input.GetAxis("Vertical") * vSpeedMultiplier;
 
             // if (Input.GetButtonDown("Jump"))
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(jumpKey))
                 onJump = true;
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-                onCrouch = true;
-            else if (Input.GetKeyUp(KeyCode.DownArrow))
-                onCrouch = false;
+			if (Input.GetKey(actionKey))
+				onAction = true;
+			else onAction = false;
+
+			if (Input.GetKey(specialKey))
+				onSpecial = true;
+			else onSpecial = false;
+			
+			if (Input.GetKey(cancelKey))
+				onCancel =  true;
+			else onCancel = false;
 
 
-            ////GARBAGE QUICK PROTOTYPE CODE
-            //Terminal
-            //If the player is touching a terminal...
-            Vector2 playerBoxCastSize = new Vector2(5, 5);
-            if (Physics2D.BoxCast(transform.position, playerBoxCastSize, 0f, Vector2.up, 0f, whatIsTerminal))
-            {
-                //...and player has pressed action
-                // if (Input.get)
-            }
+            // if (Input.GetKeyDown(KeyCode.DownArrow))
+            //     onCrouch = true;
+            // else if (Input.GetKeyUp(KeyCode.DownArrow))
+            //     onCrouch = false;
 
-            //Ladder
-
+            // ////GARBAGE QUICK PROTOTYPE CODE
+            // //Terminal
+            // //If the player is touching a terminal...
+            // Vector2 playerBoxCastSize = new Vector2(5, 5);
+            // if (Physics2D.BoxCast(transform.position, playerBoxCastSize, 0f, Vector2.up, 0f, whatIsTerminal))
+            // {
+            //     //...and player has pressed action
+            //     // if (Input.get)
+            // }
         }
 
         void FixedUpdate()
         {
             //Move using physics
-            controller.Move(hInput * Time.fixedDeltaTime, onCrouch, onJump);
+            controller.Move(new Vector2(hInput * hSpeedMultiplier, vInput * vSpeedMultiplier) * Time.fixedDeltaTime, onJump, onAction, onSpecial, onCancel);
             onJump = false;
+            // controller.Move(hInput * Time.fixedDeltaTime, onCrouch, onJump);
+
+			// if ()
+			// controller.Action()
+
         }
     }
 }

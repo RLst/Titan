@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4293397205535462}
   - component: {fileID: 61358031656195898}
   - component: {fileID: 61412622208973816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Station
   m_TagString: Untagged
   m_Icon: {fileID: 0}

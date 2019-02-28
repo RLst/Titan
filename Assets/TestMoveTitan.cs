@@ -2,10 +2,9 @@
 
 public class TestMoveTitan : MonoBehaviour {
 
-	public float speed = 1f;
-
-	float hInput, vInput;
-
+	[SerializeField] float force = 40000f;
+	[SerializeField] KeyCode left = KeyCode.Q;
+	[SerializeField] KeyCode right = KeyCode.E;
 	public Rigidbody2D titanTotalRB;
 
 	void Start () {
@@ -14,10 +13,16 @@ public class TestMoveTitan : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		hInput = Input.GetAxis("Horizontal");
+		// hInput = Input.GetAxis("Horizontal");
+		float input;
+		if (Input.GetKey(right))
+			input = 1f;
+		else if (Input.GetKey(left))
+			input = -1f;
+		else input = 0;
 
 		//Move the titan
-		titanTotalRB.AddForce(Vector2.right * hInput * speed);
+		titanTotalRB.AddForce(Vector2.right * input * force);
 		// transform.Translate(Vector3.right * hInput * speed);
 		// transform.position.x += hInput * speed;
 		

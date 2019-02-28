@@ -11,21 +11,6 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1557453184141494}
   m_IsPrefabAsset: 1
---- !u!1 &1023029355667344
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4956730590311634}
-  m_Layer: 0
-  m_Name: CeilingCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1365788460052122
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +50,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4275902645079544}
-  - component: {fileID: 114573871909741198}
+  - component: {fileID: 114438686328873018}
   - component: {fileID: 114883476585438020}
   - component: {fileID: 50540643704255496}
   - component: {fileID: 61707010791615594}
@@ -84,12 +69,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1557453184141494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.982, y: -1.77, z: 0.007469467}
+  m_LocalPosition: {x: -24.736, y: -0.7, z: 0.007469467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4396244179025774}
   - {fileID: 4357865336437356}
-  - {fileID: 4956730590311634}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -119,19 +103,6 @@ Transform:
   m_Father: {fileID: 4275902645079544}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4956730590311634
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1023029355667344}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.259, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4275902645079544}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50540643704255496
 Rigidbody2D:
   serializedVersion: 4
@@ -147,7 +118,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: ab56c35b968e9754bb804adba1af41be, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -192,7 +163,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17590362, y: 0.42470074}
   m_EdgeRadius: 0
---- !u!114 &114573871909741198
+--- !u!114 &114438686328873018
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,31 +171,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557453184141494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98685acc41833fd4fa16fc700520d995, type: 3}
+  m_Script: {fileID: 11500000, guid: 457727130fcda664ea5228c55b3dc1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 350
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.05
   m_AirControl: 1
+  m_MovementSmoothing: 0.05
+  m_JumpForce: 400
+  m_GroundCheck: {fileID: 4357865336437356}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1024
+  ladderDetectDist: 5
   whatIsLadder:
     serializedVersion: 2
-    m_Bits: 0
-  m_GroundCheck: {fileID: 4357865336437356}
-  m_CeilingCheck: {fileID: 4956730590311634}
-  m_CrouchDisableCollider: {fileID: 61707010791615594}
+    m_Bits: 2048
+  whatAreMountables:
+    serializedVersion: 2
+    m_Bits: 5120
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Titan.CharacterController2D+BoolEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114883476585438020
 MonoBehaviour:
@@ -237,13 +204,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb603c65a8ecd04fa578ab636bc9217, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hSpeedMultiplier: 20
-  vSpeedMultiplier: 17.5
+  hSpeedMultiplier: 5
+  vSpeedMultiplier: 5
   actionKey: 106
   jumpKey: 107
-  whatIsTerminal:
-    serializedVersion: 2
-    m_Bits: 0
+  specialKey: 105
+  cancelKey: 108
 --- !u!212 &212584929485757672
 SpriteRenderer:
   m_ObjectHideFlags: 1

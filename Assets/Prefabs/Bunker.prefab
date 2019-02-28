@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61425521967667458}
   - component: {fileID: 61807565438093010}
   - component: {fileID: 61363937123615640}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Bunker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
