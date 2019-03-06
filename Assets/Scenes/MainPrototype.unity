@@ -606,6 +606,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114883476585438020, guid: 5d58f7574037df447a11f918d230b178,
+        type: 2}
+      propertyPath: hSpeedMultiplier
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114883476585438020, guid: 5d58f7574037df447a11f918d230b178,
+        type: 2}
+      propertyPath: vSpeedMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d58f7574037df447a11f918d230b178, type: 2}
   m_IsPrefabAsset: 0
