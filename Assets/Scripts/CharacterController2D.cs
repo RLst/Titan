@@ -102,7 +102,7 @@ namespace Titan
 			Debug.Log("Grounded: " + isGrounded);
 		}
 
-        public void Move(Vector2 direction, bool onJump, bool onAction, bool onSpecial, bool onCancel)
+        public void Move(Vector2 input, bool onJump, bool onAction, bool onSpecial, bool onCancel)
 		{
 			//Handles:
 			//> Grounded movement ie. run
@@ -112,15 +112,15 @@ namespace Titan
 			//MOVE character only if grounded OR is air controllable
 			if (isGrounded || hasAirControl)
 			{
-				Vector3 targetVelocity = new Vector2(direction.x, rb.velocity.y);
+				Vector3 targetVelocity = new Vector2(input.x, rb.velocity.y);
 				rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, movementSmoothing);
 
 				//FACING
-				if (direction.x > 0 && !isFacingRight)
+				if (input.x > 0 && !isFacingRight)
 				{
 					Flip();
 				}
-				else if (direction.x < 0 && isFacingRight)
+				else if (input.x < 0 && isFacingRight)
 				{
 					Flip();
 				}
@@ -142,7 +142,7 @@ namespace Titan
 			// var upCastInfo = Physics2D.Raycast(transform.position, Vector2.up, ladderUpCast, whatIsLadder);
 
 			//If the player is pressing up
-			if (direction.y > 0) {
+			if (input.y > 0) {
 				//If the player is within range of a ladder
 				if (upCastInfo.collider != null)
 				{
@@ -157,22 +157,22 @@ namespace Titan
 			
 			
 
-            if (upCastInfo.collider != null || downCastInfo.collider != null)    //If not null then cast has DEFINITELY hit a ladder
-            {
-				//...and player is also pressing up or down
-				if (direction.y != 0)
-				{
-					onClimbLadder();
-					if (upCastInfo.collider != null)
-						currentLadder = upCastInfo.collider.transform;
-					else
-						currentLadder = downCastInfo.collider.transform;
-				}
-			}
-			else
-			{
-				offClimbLadder();
-			}
+            // if (upCastInfo.collider != null || downCastInfo.collider != null)    //If not null then cast has DEFINITELY hit a ladder
+            // {
+			// 	//...and player is also pressing up or down
+			// 	if (input.y != 0)
+			// 	{
+			// 		onClimbLadder();
+			// 		if (upCastInfo.collider != null)
+			// 			currentLadder = upCastInfo.collider.transform;
+			// 		else
+			// 			currentLadder = downCastInfo.collider.transform;
+			// 	}
+			// }
+			// else
+			// {
+			// 	offClimbLadder();
+			// }
 
 			//Climb down
 			var downCastInfo = Physics2D.BoxCast(m_GroundCheck.position, ladderBoxCastExtents, 0, Vector2.down, 0, whatIsLadder);
@@ -186,7 +186,7 @@ namespace Titan
 				// Vector3 snapToLadder = new Vector2(Vector2.MoveTowards())
 				// rb.velocity = Vector3.SmoothDamp(rb.velocity, targetVelocity, ref m_Velocity, movementSmoothing);
 
-				rb.velocity = new Vector2(rb.velocity.x, direction.y);
+				rb.velocity = new Vector2(rb.velocity.x, input.y);
 			}
 			else {
 				currentLadder = null;
