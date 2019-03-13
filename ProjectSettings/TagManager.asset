@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - NonInteractable
-  - 
-  - Walkable
+  - TitanFloor
+  - WorldFloor
   - Ladder
   - Mountables
   - Middleground

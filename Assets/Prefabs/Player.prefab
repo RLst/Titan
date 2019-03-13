@@ -51,7 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4275902645079544}
   - component: {fileID: 114438686328873018}
-  - component: {fileID: 114883476585438020}
+  - component: {fileID: 114493765423740638}
   - component: {fileID: 50540643704255496}
   - component: {fileID: 61707010791615594}
   - component: {fileID: 58103367000134512}
@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1557453184141494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.042, y: -3.032, z: 0.007469467}
+  m_LocalPosition: {x: -30.974, y: -3.05, z: 0.007469467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4396244179025774}
@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886353176784752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4275902645079544}
@@ -205,25 +205,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasAirControl: 1
   movementSmoothing: 0.05
-  m_JumpForce: 400
+  m_JumpForce: 350
   gravityScale: 2
   m_GroundCheck: {fileID: 4357865336437356}
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 1024
-  ladderBoxCastExtents: {x: 0.25, y: 0.5}
+    m_Bits: 1536
+  ladderUpCast: 0.3
+  ladderDownCast: 0.5
   whatIsLadder:
     serializedVersion: 2
     m_Bits: 2048
   whatAreMountables:
     serializedVersion: 2
-    m_Bits: 5120
+    m_Bits: 4096
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114883476585438020
+--- !u!114 &114493765423740638
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -231,11 +232,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1557453184141494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb603c65a8ecd04fa578ab636bc9217, type: 3}
+  m_Script: {fileID: 11500000, guid: 82e59736e664dbc4ba1724b873a1719d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hSpeedMultiplier: 5
-  vSpeedMultiplier: 10
+  hSpeedMultiplier: 15
+  vSpeedMultiplier: 12
   actionKey: 106
   jumpKey: 107
   specialKey: 105
@@ -274,7 +275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_Sprite: {fileID: 21300008, guid: 9bfd0736b68517e49be271c2c0e3787e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

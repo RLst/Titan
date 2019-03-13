@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeepPlayerOnTitan : MonoBehaviour {
+public class Station : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

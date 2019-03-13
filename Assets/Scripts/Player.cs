@@ -2,13 +2,13 @@
 
 namespace Titan.Test
 {
-    public class PlayerPrototype : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         //Monolithic player prototype class
         CharacterController2D controller;
 
-        [SerializeField] float hSpeedMultiplier = 20f;
-        [SerializeField] float vSpeedMultiplier = 17.5f;
+        [SerializeField] float hSpeedMultiplier = 15f;
+        [SerializeField] float vSpeedMultiplier = 12f;
 
         float hInput, vInput;
 

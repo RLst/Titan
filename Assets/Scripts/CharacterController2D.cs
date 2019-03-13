@@ -30,7 +30,7 @@ namespace Titan
 
 
 		[Header("Ladder")]
-		[SerializeField] Vector2 ladderBoxCastSize = new Vector2(0.1f, 0.25f);
+		// [SerializeField] Vector2 ladderBoxCastSize = new Vector2(0.1f, 0.25f);
 		[SerializeField] float ladderUpCast = 0.5f;
 		[SerializeField] float ladderDownCast = 0.5f;
 		[SerializeField] LayerMask whatIsLadder;

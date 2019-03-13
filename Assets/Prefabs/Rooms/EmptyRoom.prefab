@@ -37,8 +37,9 @@ GameObject:
   - component: {fileID: 4892139124704650}
   - component: {fileID: 61009118973078212}
   - component: {fileID: 61863329603478428}
+  - component: {fileID: 114288943919480194}
   m_Layer: 10
-  m_Name: Empty
+  m_Name: EmptyRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,8 +64,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1364061133663076}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.912, y: 2.904, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4542846700228368}
@@ -121,6 +122,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.527111, y: 0.07351971}
   m_EdgeRadius: 0
+--- !u!114 &114288943919480194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1364061133663076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33df422e6b46e89409ad8b4edd2282f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  floor: {fileID: 61863329603478428}
 --- !u!212 &212245588133115810
 SpriteRenderer:
   m_ObjectHideFlags: 1

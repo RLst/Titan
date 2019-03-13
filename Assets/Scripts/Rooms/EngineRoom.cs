@@ -1,4 +1,7 @@
-﻿namespace Titan
+﻿
+using UnityEngine;
+
+namespace Titan
 {
 	public class EngineRoom : Room
 	{
