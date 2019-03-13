@@ -563,11 +563,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4275902645079544, guid: 5d58f7574037df447a11f918d230b178, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -31.042
+      value: -30.974
       objectReference: {fileID: 0}
     - target: {fileID: 4275902645079544, guid: 5d58f7574037df447a11f918d230b178, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.032
+      value: -3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4275902645079544, guid: 5d58f7574037df447a11f918d230b178, type: 2}
       propertyPath: m_LocalPosition.z
@@ -609,12 +609,32 @@ Prefab:
     - target: {fileID: 114883476585438020, guid: 5d58f7574037df447a11f918d230b178,
         type: 2}
       propertyPath: hSpeedMultiplier
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114883476585438020, guid: 5d58f7574037df447a11f918d230b178,
         type: 2}
       propertyPath: vSpeedMultiplier
-      value: 20
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114438686328873018, guid: 5d58f7574037df447a11f918d230b178,
+        type: 2}
+      propertyPath: whatAreMountables.m_Bits
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 114438686328873018, guid: 5d58f7574037df447a11f918d230b178,
+        type: 2}
+      propertyPath: ladderBoxCastSize.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114438686328873018, guid: 5d58f7574037df447a11f918d230b178,
+        type: 2}
+      propertyPath: ladderBoxCastSize.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114438686328873018, guid: 5d58f7574037df447a11f918d230b178,
+        type: 2}
+      propertyPath: m_JumpForce
+      value: 350
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d58f7574037df447a11f918d230b178, type: 2}

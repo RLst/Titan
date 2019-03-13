@@ -30,7 +30,7 @@ namespace Titan
 
 
 		[Header("Ladder")]
-		[SerializeField] Vector2 ladderBoxCastExtents = new Vector2(0.25f, 1f);
+		[SerializeField] Vector2 ladderBoxCastSize = new Vector2(0.1f, 0.25f);
 		[SerializeField] float ladderUpCast = 0.5f;
 		[SerializeField] float ladderDownCast = 0.5f;
 		[SerializeField] LayerMask whatIsLadder;
@@ -138,46 +138,40 @@ namespace Titan
 
 			//LADDER
 			//Climbing up
-			var upCastInfo = Physics2D.BoxCast(transform.position, ladderBoxCastExtents, 0, Vector2.up, 0, whatIsLadder);
-			// var upCastInfo = Physics2D.Raycast(transform.position, Vector2.up, ladderUpCast, whatIsLadder);
+			// var upCastInfo = Physics2D.BoxCast(m_GroundCheck.position, ladderBoxCastSize, 0, Vector2.up, Mathf.Infinity, whatIsLadder);
+			var upCastInfo = Physics2D.Raycast(transform.position, Vector2.up, ladderUpCast, whatIsLadder);
+			// var downCastInfo = Physics2D.BoxCast(new Vector2(m_GroundCheck.position.x, m_GroundCheck.position.y) - ladderBoxCastSize, ladderBoxCastSize, 0, Vector2.down, Mathf.Infinity, whatIsLadder);
+			var downCastInfo = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, ladderDownCast, whatIsLadder);
 
 			//If the player is pressing up
 			if (input.y > 0) {
 				//If the player is within range of a ladder
 				if (upCastInfo.collider != null)
 				{
-					//If player is not on a ladder
-					if (isClimbing && currentLadder != null)
-					{
-						//Set player to be in a ladder climbing state
-						onClimbLadder(upCastInfo.collider.transform);
-					}
+					Debug.DrawLine(transform.position, transform.up * ladderUpCast, Color.red, 0.5f);
+					onClimbLadder(upCastInfo.collider.transform);
+				}
+				else {
+					offClimbLadder();
 				}
 			}
+			//If player is pressing down and ladder is below
+			else if (input.y < 0) {
+				if (downCastInfo.collider != null)
+				{
+					Debug.DrawLine(new Vector2(m_GroundCheck.position.x, m_GroundCheck.position.y), -transform.up * ladderDownCast, Color.red, 0.5f);
+					// Debug.DrawRay(m_GroundCheck.position, Vector2.down, Color.red, ladderBoxCastSize.y);
+					onClimbLadder(downCastInfo.collider.transform);
+				}
+				else {
+					offClimbLadder();
+				}
+			}
+
+			else if (input.x != 0) {
+				offClimbLadder();
+			}
 			
-			
-
-            // if (upCastInfo.collider != null || downCastInfo.collider != null)    //If not null then cast has DEFINITELY hit a ladder
-            // {
-			// 	//...and player is also pressing up or down
-			// 	if (input.y != 0)
-			// 	{
-			// 		onClimbLadder();
-			// 		if (upCastInfo.collider != null)
-			// 			currentLadder = upCastInfo.collider.transform;
-			// 		else
-			// 			currentLadder = downCastInfo.collider.transform;
-			// 	}
-			// }
-			// else
-			// {
-			// 	offClimbLadder();
-			// }
-
-			//Climb down
-			var downCastInfo = Physics2D.BoxCast(m_GroundCheck.position, ladderBoxCastExtents, 0, Vector2.down, 0, whatIsLadder);
-			// var downCastInfo = Physics2D.Raycast(m_GroundCheck.position, Vector2.down, ladderDownCast, whatIsLadder);
-
 			if (isClimbing == true)
 			{
 				//Character climbs or decends based on vertical input
@@ -191,6 +185,7 @@ namespace Titan
 			else {
 				currentLadder = null;
 			}
+
 		}
 
 		void onClimbLadder(Transform ladder)
